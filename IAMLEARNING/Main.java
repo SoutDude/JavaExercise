@@ -5,14 +5,18 @@ import java.util.Scanner;
 public class Main {
 
     private static Scanner scanner = new Scanner(System.in);
+    
     private static MobilePhone mobilePhone = new MobilePhone("0039 330 4404");
 
     public static void main(String[] args) {
 
         boolean quit = false;
-        startPhone();
-        printActions();
+        startPhone();           //  This is a very simple analogy to programing of start phone in real life. 
+        printActions();         //  First thing that is displayed after the application is ran!!
+                                //  using a while loop with NOT QUIT as the action for too end the loop after. Like, pressing a physical light on/off button. 
         while(!quit) {
+            
+            // This action will always be displayed when ran to give user a chance to see the full display of options see-> printActions.
             System.out.println("\nEnter Action: (6 to show available actions)");
             int action = scanner.nextInt();
             scanner.nextLine();
