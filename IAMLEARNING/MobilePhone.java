@@ -22,9 +22,22 @@ public class MobilePhone {
     }
 
     public boolean updateContact(Contact oldContact, Contact NewContact){
+        
+        // checking "oldContact or existing contact and returning "oldContact.getName" so this way we can store it in memory in this
+        // block of code so that we can exchange it and produce what we are seeking for, which is update current conctact with new creditials.
+        // we are requesting the position verifying that this index exists while returning false only to have getname so we can exchange when it is true!
         int foundPosition = findContact(oldContact);
         if(foundPosition <0 ) {
             System.out.println(oldContact.getName() + ", was not found. ");
+            return false;
+        
+            // This action below "else if" checking to see if contact already exsist and because it has "!= -1" which indicates that
+            // this is false and contact does exists!.. if so it won't create a duplicate when 
+            // trying to update the contact with the same creditials and returning false! because our end goal is to update 
+            // contact to a new name and to produce a return true;
+        } else if(findContact(NewContact.getName()) != -1) {
+            System.out.println("Contact with name " + NewContact.getName() +
+                    "already exists. update was not successful. ");
             return false;
         }
 
